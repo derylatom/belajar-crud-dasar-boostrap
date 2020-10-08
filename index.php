@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>.::web::.</title>
+    <title>-Website-</title>
 <link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <div class="container col-md-9">
     	<div class="card">
-    		<h3 align="center">Belajar Crud</h3>
+    		<h1 align="center">Aplikasi</h1>
     		<div class="card-body">
-				<a href="add.php" class="btn btn-success">Tambah</a><br><br>
+				<a href="add.php" class="btn btn-primary">Tambah Data</a>
+				<a href="cetak.php" target=_blank class="btn btn-info">Cetak</a><br><br>
     			<table class="table table-bordered">
     				<thead>
     				<tr>
@@ -53,7 +61,7 @@
 		    		}
 		    		?>
     			</table>
-				<a href="cetak.php" target=_blank class="btn btn-success">Cetak</a><br><br>
+				
     		</div>
     	</div>
     </div>

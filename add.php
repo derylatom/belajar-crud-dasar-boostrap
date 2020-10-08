@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>.::web::.</title>
+	<title>-Website-</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -14,9 +14,9 @@
 <body>
 	<div class="container col-md-9">
 		<div class="card">
-			<h3 align="center">Form Add</h3>
+			<h3 align="center">Tambah Data</h3>
 			<div class="card-body">
-				<a href="index.php" class="btn btn-warning"><-Kembali</a><br><br>
+				<a href="index.php" class="btn btn-warning">Kembali</a><br><br>
 				<form class="form-item" action="" method="post" role="form">
 					<div class="form-group">
 						<label>Kode Buku</label>
