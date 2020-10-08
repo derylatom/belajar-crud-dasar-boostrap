@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>.::Belajar CRUD Boostrap::.</title>
+	<title>.::web::.</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -19,39 +19,33 @@
 				<a href="index.php" class="btn btn-warning"><-Kembali</a><br><br>
 				<?php
 					include "koneksi.php";
-					$id = $_GET['id'];
+					$kode_buku = $_GET['kode_buku'];
 					$no = 1;
-					$sql = mysqli_query($koneksi, "SELECT * FROM kustomer WHERE idKustomer = '$id'");
+					$sql = mysqli_query($koneksi, "SELECT * FROM buku WHERE kode_buku = '$kode_buku'");
 					$data = mysqli_fetch_array($sql); //update tanpa while
 				?>
 					<form class="form-item" action="" method="post" role="form">
 						<div class="form-group">
-							<label>ID Kostumer</label>
-							<input type="number" class="form-control col-md-4" name="idKustomer" value="<?= $data['idKustomer']; ?>" placeholder="isi ID disini">
+							<label>Kode Buku</label>
+							<input type="number" class="form-control col-md-4" name="kode_buku" value="<?= $data['kode_buku']; ?>" placeholder="isi ID disini">
 						</div>
 						<div class="form-group">
-							<label>Nama Kostumer</label>
-							<input type="text" class="form-control col-md-4" name="nmKustomer" value="<?= $data['nmKustomer']; ?>" placeholder="isi nama disini">
+							<label>Nama Buku</label>
+							<input type="text" class="form-control col-md-4" name="nama_buku" value="<?= $data['nama_buku']; ?>" placeholder="isi nama disini">
 						</div>
 						<div class="form-group">
-							<label>Telepon Kostumer</label>
-							<input type="number" class="form-control col-md-4" name="telp" value="<?= $data['telp']; ?>" placeholder="isi telepon disini">
+							<label>Penerbit</label>
+							<input type="text" class="form-control col-md-4" name="penerbit" value="<?= $data['penerbit']; ?>" placeholder="isi telepon disini">
 						</div>
 						<div class="form-group">
-							<label>Alamat Kostumer</label>
-							<textarea class="form-control col-md-9" name="alamat" value="<?= $data['alamat']; ?>" placeholder="Isi Alamat disini"><?= $data['alamat']; ?></textarea>
+							<label>Pengarang</label>
+							<input type="text" class="form-control col-md-4" name="pengarang" value="<?= $data['pengarang']; ?>" placeholder="isi telepon disini">
 						</div>
-						<div class="form-group">
-							<label>Kota Kostumer</label>
-							<input type="text" class="form-control col-md-4" name="kota" value="<?= $data['kota']; ?>" placeholder="isi Kota disini">
-						</div>
-						<div class="form-group">
-							<label>Kode Pos Kostumer</label>
-							<input type="number" class="form-control col-md-4" name="kodePos" value="<?= $data['kodePos']; ?>" placeholder="isi Kode Pos disini">
-						</div>
+						
+
 						<div class="form-group">
 							<button class="btn btn-info" name="submit" type="submit">Edit</button>
-							<button class="btn btn-danger" name="reset" type="reset">Batal</button>
+							
 						</div>
 					</form>				
 			</div>
@@ -63,14 +57,13 @@
 
 <?php
 if (isset($_POST['submit'])) {
-	$idKustomer 	 = $_POST['idKustomer'];
-	$nmKustomer 	= $_POST['nmKustomer'];
-	$telp 				   = $_POST['telp'];
-	$alamat 			 = $_POST['alamat'];
-	$kota 				  = $_POST['kota'];
-	$kodePos 	 	    = $_POST['kodePos'];
+	$kode_buku 	 = $_POST['kode_buku'];
+	$nama_buku 	= $_POST['nama_buku'];
+	$penerbit 				   = $_POST['penerbit'];
+	$pengarang 			 = $_POST['pengarang'];
+	
 
-	mysqli_query($koneksi,  "UPDATE kustomer SET nmKustomer = '$nmKustomer', telp = '$telp', alamat = '$alamat',  kota = '$kota', kodePos = '$kodePos' WHERE idKustomer = '$idKustomer'");
+	mysqli_query($koneksi,  "UPDATE buku SET nama_buku = '$nama_buku', penerbit = '$penerbit', pengarang = '$pengarang' WHERE kode_buku = '$kode_buku'");
 	header("location:index.php");
 }
 ?>

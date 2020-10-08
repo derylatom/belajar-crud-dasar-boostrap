@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 
-$id = $_GET['id'];
-$delete = mysqli_query($koneksi, "DELETE FROM kustomer WHERE idKustomer = '$id'");
+$kode_buku = $_GET['kode_buku'];
+$delete = mysqli_query($koneksi, "DELETE FROM buku WHERE kode_buku = '$kode_buku'");
 header("location:index.php");
 ?>
