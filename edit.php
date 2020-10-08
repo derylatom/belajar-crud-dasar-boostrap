@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>.::web::.</title>
+	<title>-Website-</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -14,14 +14,14 @@
 <body>
 	<div class="container col-md-9">
 		<div class="card">
-			<h3 align="center">Form Edit</h3>
+			<h3 align="center">Ubah Data</h3>
 			<div class="card-body">
-				<a href="index.php" class="btn btn-warning"><-Kembali</a><br><br>
+				<a href="index.php" class="btn btn-warning">Kembali</a><br><br>
 				<?php
 					include "koneksi.php";
-					$kode_buku = $_GET['kode_buku'];
+					$id = $_GET['id'];
 					$no = 1;
-					$sql = mysqli_query($koneksi, "SELECT * FROM buku WHERE kode_buku = '$kode_buku'");
+					$sql = mysqli_query($koneksi, "SELECT * FROM buku WHERE id_buku = '$id'");
 					$data = mysqli_fetch_array($sql); //update tanpa while
 				?>
 					<form class="form-item" action="" method="post" role="form">
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 	$pengarang 			 = $_POST['pengarang'];
 	
 
-	mysqli_query($koneksi,  "UPDATE buku SET nama_buku = '$nama_buku', penerbit = '$penerbit', pengarang = '$pengarang' WHERE kode_buku = '$kode_buku'");
+	mysqli_query($koneksi,  "UPDATE buku SET kode_buku = '$kode_buku', nama_buku = '$nama_buku', penerbit = '$penerbit', pengarang = '$pengarang' WHERE id_buku = '$id'");
 	header("location:index.php");
 }
 ?>

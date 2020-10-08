@@ -30,7 +30,8 @@
     					<td>Kode Buku</td>
     					<td>Nama Buku</td>
     					<td>Penerbit</td>
-    					<td>Pengarang</td>
+						<td>Pengarang</td>
+						<td></td>
     					
     				</tr>
 	    			</thead>
@@ -39,7 +40,7 @@
 	    			<?php
 						include "koneksi.php";
 						$no=1;
-						$sql = mysqli_query($koneksi, "SELECT * FROM buku order by kode_buku ASC");
+						$sql = mysqli_query($koneksi, "SELECT * FROM buku order by id_buku ASC");
 						while($data = mysqli_fetch_array($sql)){
 					?>
 						<td><?= $no++; ?></td>
@@ -49,9 +50,9 @@
 						<td><?= $data['pengarang']; ?></td>
 					
 						<td>
-							<a href="edit.php?kode_buku=<?=$data['kode_buku'];?>">Edit</a>
+							<a href="edit.php?id=<?=$data['id_buku'];?>">Edit</a>
 							|
-							<a href="delete.php?kode_buku=<?=$data['kode_buku'];?>">Delete</a>
+							<a href="delete.php?id=<?=$data['id_buku'];?>">Delete</a>
 						
 							
 						</td>
